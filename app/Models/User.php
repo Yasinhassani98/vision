@@ -43,9 +43,6 @@ class User extends Authenticatable
     ];
 
 
-    public function comments(){
-        return $this->belongsToMany(Comment::class,'comments','teacher_id','student_id');
-    }
 
     public function studentsAsParent(){
         return $this->hasMany(Student::class,'parent_id','id');

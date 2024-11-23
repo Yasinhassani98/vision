@@ -15,7 +15,7 @@ class Student extends Model
 
     }
     public function comments(){
-        return $this->belongsToMany(Comment::class,'comments','student_id','teacher_id');
+        return $this->hasMany(Comment::class);
     }
     public function parent(){
         return $this->belongsTo(User::class,'parent_id','id');
