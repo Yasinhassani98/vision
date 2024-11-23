@@ -41,4 +41,39 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function comments(){
+        return $this->belongsToMany(Comment::class,'comments','teacher_id','student_id');
+    }
+
+    public function studentsAsParent(){
+        return $this->hasMany(Student::class,'parent_id','id');
+    }
+    public function studentsAsTeacher()
+    {
+        return $this->belongsToMany(Student::class, 'student_teacher', 'teacher_id', 'student_id');
+    }
+
+
+    public function gpstrackings(){
+        return $this->hasMany(Gpstracking::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+        
+    }
+
+    public function payments(){
+        return $this->hasMany(Payment::class,'parent_id','id');
+    }
+
+    public function levels()
+    {
+        return $this->belongsToMany(Level::class, 'level_teacher', 'teacher_id', 'level_id');
+    }
+
+    
 }

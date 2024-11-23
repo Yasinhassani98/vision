@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('teacher_id')->nullable()->constrained('users')->nullOnDelete(); // المدرس الرئيسي
+            $table->decimal('grade_level');
             $table->timestamps();
         });
     }

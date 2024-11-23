@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Level extends Model
 {
     use HasFactory;
+
+
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
+    public function teachers()
+    {
+        return $this->belongsToMany(User::class, 'level_teacher', 'level_id', 'teacher_id');
+    }
+
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
+    }
+
 }
