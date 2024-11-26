@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->foreignId('level_id')->constrained('levels')->cascadeOnDelete();
             $table->foreignId('parent_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('supervisor_id')->nullable()->constrained('users')->cascadeOnDelete();
+            $table->enum('gander',['male','female'])->default('male');
             $table->date('DOB');
             $table->text('bio');
             $table->timestamps();

@@ -20,6 +20,9 @@ class Student extends Model
     public function parent(){
         return $this->belongsTo(User::class,'parent_id','id');
     }
+    public function supervisor(){
+        return $this->belongsTo(User::class,'supervisor_id','id');
+    }
     public function teachers()
     {
         return $this->belongsToMany(User::class, 'student_teacher', 'student_id', 'teacher_id');

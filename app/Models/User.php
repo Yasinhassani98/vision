@@ -51,6 +51,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Student::class, 'student_teacher', 'teacher_id', 'student_id');
     }
+    public function studentsAsSupervisor()
+    {
+        return $this->hasMany(Student::class, 'supervisor_id', 'id');
+    }
 
 
     public function gpstrackings(){
