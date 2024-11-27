@@ -17,9 +17,9 @@ return new class extends Migration
         Schema::create('gpstrackings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->decimal('latitude', 10, 8); // خط العرض
-            $table->decimal('longitude', 11, 8); // خط الطول
-            $table->timestamp('tracked_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->decimal('latitude', 10, 8)->index();
+            $table->decimal('longitude', 11, 8)->index();
+            $table->timestamp('tracked_at')->useCurrent();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->enum('read_status',['seen','unseen'])->default('unseen');
-            $table->enum('type',['reminder','payment'])->default('unseen');
+            $table->enum('type',['reminder','payment'])->default('reminder');
             $table->string('message');
             $table->timestamp('read_at')->nullable();
             $table->timestamps();
