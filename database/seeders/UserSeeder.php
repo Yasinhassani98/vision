@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'yasin@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'admin',
-            'gander' => 'male',
+            'gender' => 'male',
 
 
         ]);
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'email' => 'joudy@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'admin',
-            'gander' => 'female',
+            'gender' => 'female',
 
         ]);
         User::create([
@@ -39,7 +39,14 @@ class UserSeeder extends Seeder
             'email' => 'wessal@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => 'admin',
-            'gander' => 'female',
+            'gender' => 'female',
+        ]);
+        User::create([
+            'name' => 'mona',
+            'email' => 'mona@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => 'parent',
+            'gender' => 'female',
         ]);
     }
 }

@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/css/bootstrap.css')}}">
-
     <link rel="stylesheet" href="{{asset('vendors/iconly/bold.css')}}">
-
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.12/index.global.min.css">
     <link rel="stylesheet" href="{{asset('/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
@@ -31,16 +31,15 @@
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
-                    
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
 
-            <div class="page-heading">
+            {{-- <div class="page-heading">
                 <h3>Profile Statistics</h3>
-            </div>
-            <div class="page-content">
-                {{-- @yield('content') --}}
+            </div> --}}
+            <div class="page-content ">
+                @yield('content')
                 {{-- <section class="row">
                     <div class="col-12 col-lg-9">
                         <div class="row">
@@ -323,7 +322,9 @@
     </div>
     <script src="{{asset('/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('/js/bootstrap.bundle.min.js')}}"></script>
-
+    
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.12/index.global.min.js"></script>
     <script src="{{asset('/vendors/apexcharts/apexcharts.js')}}"></script>
     <script src="{{asset('/js/pages/dashboard.js')}}"></script>
 

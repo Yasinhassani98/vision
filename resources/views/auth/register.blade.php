@@ -27,29 +27,35 @@
                     <form action="{{ route('register') }}" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="email" type="text" class="form-control form-control-xl" placeholder="Email">
+                            <x-front.input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
                             <div class="form-control-icon">
                                 <i class="bi bi-envelope"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="name" type="text" class="form-control form-control-xl" placeholder="Username">
+                            <x-front.input type="text" name="name" placeholder="Name" value="{{ old('name') }}" />
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="password" type="password" class="form-control form-control-xl"
-                                placeholder="Password">
+                            <x-front.input type="password" name="password" placeholder="Password" />
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="password_confirmation" type="password" class="form-control form-control-xl"
-                                placeholder="Confirm Password">
+                            <x-front.input type="password" name="password.confirmation" placeholder="Confirm Password" />
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-group position-relative mb-4">
+                            <label class="form-label">Gender</label>
+                            <div class="d-flex">
+                                <div class="form-check me-3">
+                                    <x-front.radio name="gender" value="{{ old('gender') }}" :options="['male' => 'Male', 'female' => 'Female']" />
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Sign Up</button>

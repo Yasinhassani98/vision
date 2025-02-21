@@ -27,7 +27,7 @@
                     <form action="{{route('password.email')}}" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="email" name="email" class="form-control form-control-xl" placeholder="Email">
+                            <x-front.input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
                             <div class="form-control-icon">
                                 <i class="bi bi-envelope"></i>
                             </div>

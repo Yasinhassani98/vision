@@ -1,6 +1,7 @@
 @props([
     'label' => null,
     'name',
+    'value' => null,
 ])
 @if ($label)
     <label for=""> {{ $label }} </label>
@@ -10,7 +11,7 @@
             @error($name)
                 is-invalid   
             @enderror
-            "> {{ old($name) }} </textarea>
+            "> {{ $value ?? old($name) }} </textarea>
 @error($name)
     <div class="invalid-feedback">
         {{ $message }}

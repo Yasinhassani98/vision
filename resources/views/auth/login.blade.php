@@ -27,13 +27,13 @@
                     <form action="{{ route('login') }}" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="email" type="text" class="form-control form-control-xl" placeholder="example@example.com">
+                            <x-front.input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input name="password" type="password" class="form-control form-control-xl" placeholder="Password">
+                            <x-front.input type="password" name="password" placeholder="Password" />
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>

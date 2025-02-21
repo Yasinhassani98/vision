@@ -11,9 +11,9 @@
 
 @foreach ($options as $option)
     <div class="form-check">
-        <input class="form-check-input" name="{{ $name }}" type="radio" id="flexRadioDefault1"
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault{{ $loop->index }}"
             value="{{ $option }}" {{ old($name, $checked) == $option ? 'checked' : '' }}>
-        <label class="form-check-label" for="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault{{ $loop->index }}">
             {{ $option }}
         </label>
     </div>

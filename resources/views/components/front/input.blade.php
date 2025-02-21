@@ -1,6 +1,7 @@
 @props([
     'label' => null,
     'placeholder' => null,
+    'step' => null,
     'type' => 'text',
     'name',
     'value',
@@ -8,7 +9,7 @@
 @if ($label)
     <label for=""> {{ $label }} </label>
 @endif
-<input type="{{ $type }}" name="{{ $name }}" id="" @if ($placeholder) placeholder="{{ $placeholder }}"@endif
+<input type="{{ $type }}" name="{{ $name }}" step="{{ $step }}" @if ($placeholder) placeholder="{{ $placeholder }}"@endif
        value="{{ $value ?? old($name) }}" class="form-control
         @error($name)
             is-invalid   
