@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['first_name','last_name','level_id','parent_id','supervisor_id','gender','DOB','bio'];
 
     public function level(){
         return $this->belongsTo(Level::class);

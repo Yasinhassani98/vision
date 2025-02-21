@@ -20,8 +20,11 @@ return new class extends Migration
             $table->foreignId('level_id')->constrained('levels')->cascadeOnDelete();
             $table->foreignId('parent_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('supervisor_id')->nullable()->constrained('users')->cascadeOnDelete();
-            $table->enum('gander',['male','female'])->default('male');
+            $table->enum('gender',['male','female'])->default('male');
             $table->date('DOB');
+            $table->string('phone')->nullable();
+            $table->string('address');
+            $table->string('image')->nullable();
             $table->text('bio');
             $table->timestamps();
         });

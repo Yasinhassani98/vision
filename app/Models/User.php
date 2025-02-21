@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'gender',
     ];
 
     /**
@@ -74,6 +76,20 @@ class User extends Authenticatable
     public function levels()
     {
         return $this->belongsToMany(Level::class, 'level_teacher', 'teacher_id', 'level_id');
+    }
+
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+    public function totalParentFee(){
+        $childrenCount = $this->studentsAsParent()->count();
+        $childFee = config('fees.child_fee', 100); // Default to 100 if not configured
+        return $childrenCount * $childFee;
+    }
+
+    public function totalParentPayments(){
+        return $this->payments()->where('status','confirmed')->sum('amount');
     }
 
     

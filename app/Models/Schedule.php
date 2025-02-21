@@ -9,6 +9,8 @@ class Schedule extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'level_id', 'type', 'description', 'start_time', 'end_time'];
+
     public function level(){
         return $this->belongsTo(Level::class);
     }

@@ -9,7 +9,7 @@ class Level extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = ['grade_level'];
     public function students(){
         return $this->hasMany(Student::class);
     }

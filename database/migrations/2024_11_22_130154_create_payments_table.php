@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('users')->nullOnDelete();
-            $table->decimal('amount', 15, 2);
-            $table->dateTime('payment_date');
-            $table->enum('status',['confirmed','partly','failed','pending'])->default('failed');
+            $table->decimal('amount', 15, 2)->unsigned();
+            $table->dateTime('payment_date')->useCurrent();
+            $table->enum('status',['confirmed','partly','failed','pending'])->default('pending');
             $table->timestamps();
         });
     }
