@@ -77,7 +77,7 @@
                                         <td>{{ $student->gender }}</td>
                                         <td>{{ $student->DOB }}</td>
                                         <td>{{ $student->phone ?? 'N/A' }}</td>
-                                        <td>{{ $student->address }}</td>
+                                        <td>{{ Str::limit($student->address,10) }}</td>
                                         <td>
                                             <a href="{{ route('admin.students.show', $student->id) }}" class="btn btn-sm btn-outline-success">Show</a>
                                             <a href="{{ route('admin.students.edit', $student->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
